@@ -38,6 +38,6 @@ public class Job {
 
     @Override
     public String toString() {
-        return "Job{" + "jobName=" + jobName + ", priority=" + priority + '}';
+        return "Job{" + "Name=" + jobName + ", priority=" + priority + '}';
     }
 }

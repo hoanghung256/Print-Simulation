@@ -53,7 +53,7 @@ public class ArrayQueue {
         return true;
     }
 
-    void enqueue(Object x) {
+    public void enqueue(Object x) {
         if (isFull() && !grow())
             return;
 
@@ -68,13 +68,13 @@ public class ArrayQueue {
         }
     }
 
-    Object dequeue() throws Exception {
+    public Object dequeue() throws Exception {
         if (isEmpty())
             throw new Exception();
         Object x = a[first];
 
         if (first == last) {
-            first = last = - 1;
+            first = last = -1;
         } else if (first == max - 1) {
             first = 0;
         } else {
@@ -82,24 +82,5 @@ public class ArrayQueue {
         }
 
         return x;
-    }
-
-    public static void main(String[] args) {
-        ArrayQueue aq = new ArrayQueue();
-
-        aq.enqueue("1");
-        aq.enqueue("2");
-        aq.enqueue("3");
-        aq.enqueue("4");
-
-        while (!aq.isEmpty()) {
-            try {
-                System.out.print(aq.dequeue() + " ");
-            } catch (Exception e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-                break;
-            }
-        }
     }
 }
