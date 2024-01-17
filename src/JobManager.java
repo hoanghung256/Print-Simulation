@@ -11,7 +11,7 @@ import model.Job;
  * @author hoang
  */
 public class JobManager {
-    ArrayQueue jobs;
+    private ArrayQueue jobs;
 
     public JobManager() {
         jobs = new ArrayQueue();
@@ -31,14 +31,10 @@ public class JobManager {
     }
 
     public void addJob(Job job) {
-        
+
     }
 
     public void executeNextJob() {
-        try {
-            System.out.println("Executing " + jobs.dequeue() + "...");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+
     }
 }
