@@ -19,13 +19,15 @@ public class Main {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        JobManager1 jobManager = new JobManager1();
 
         do {
             showMenu();
             System.out.print("Enter choice: ");
             int choice = sc.nextInt();
             sc.nextLine();
-            execute(choice);
+
+            execute(choice, jobManager);
         } while (true);
     }
 
@@ -37,9 +39,8 @@ public class Main {
         System.out.println("4. Exit");
     }
 
-    private static void execute(int n) {
+    private static void execute(int n, JobManager1 jobManager) {
         Scanner sc = new Scanner(System.in);
-        JobManager jobManager = new JobManager();
 
         switch (n) {
             case 1:
