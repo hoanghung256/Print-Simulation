@@ -5,10 +5,10 @@ package datastructure;
  * @author hoang
  */
 public class ArrayQueue {
-    protected Object[] a;
-    protected int max;
-    protected int first;
-    protected int last;
+    public Object[] a;
+    public int max;
+    public int first;
+    public int last;
 
     public ArrayQueue(int max) {
         this.max = max;
@@ -28,7 +28,7 @@ public class ArrayQueue {
         return ((first == 0 && last == max - 1) || first == last + 1);
     }
 
-    private boolean grow() {
+    public boolean grow() {
         int i, j;
         int newMax = max + max / 2;
         Object[] a1 = new Object[newMax];
@@ -82,5 +82,32 @@ public class ArrayQueue {
         }
 
         return x;
+    }
+
+    public void insert(int index, Object x) throws Exception {
+        if (index < 0 || index > max) {
+            throw new Exception("Index out of bounds");
+        }
+        if (isFull() && !grow()) {
+            return;
+        }
+        for (int i = last; i >= index; i--) {
+            a[(i + 1) % max] = a[i];
+        }
+        a[index] = x;
+        if (index > last) {
+            last = index;
+        } else {
+            last = (last + 1) % max;
+        }
+        if (first == -1) {
+            first = 0;
+        }
+    }
+
+    public Object front() throws Exception {
+        if (isEmpty())
+            throw new Exception();
+        return (a[first]);
     }
 }
