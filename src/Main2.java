@@ -3,23 +3,18 @@ import java.util.Scanner;
 
 import model.Job;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-
 /**
  *
  * @author hoang
  */
-public class Main {
+public class Main2 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        JobManager1 jobManager = new JobManager1();
+        JobManager2 jobManager = new JobManager2();
 
         do {
             showMenu();
@@ -32,14 +27,14 @@ public class Main {
     }
 
     private static void showMenu() {
-        System.out.println("PRINT SIMULATION");
+        System.out.println("PRINT SIMULATION WITH ARRAYQUEUE");
         System.out.println("1. Add print job");
         System.out.println("2. Execute next print job");
         System.out.println("3. Show all remain print jobs");
         System.out.println("4. Exit");
     }
 
-    private static void execute(int n, JobManager1 jobManager) {
+    private static void execute(int n, JobManager2 jobManager) {
         Scanner sc = new Scanner(System.in);
 
         switch (n) {

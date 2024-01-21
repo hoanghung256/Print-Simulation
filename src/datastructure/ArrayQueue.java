@@ -5,10 +5,10 @@ package datastructure;
  * @author hoang
  */
 public class ArrayQueue {
-    private Object[] a;
-    private int max;
-    private int first;
-    private int last;
+    public Object[] a;
+    public int max;
+    public int first;
+    public int last;
 
     public ArrayQueue(int max) {
         this.max = max;
@@ -28,7 +28,7 @@ public class ArrayQueue {
         return ((first == 0 && last == max - 1) || first == last + 1);
     }
 
-    private boolean grow() {
+    public boolean grow() {
         int i, j;
         int newMax = max + max / 2;
         Object[] a1 = new Object[newMax];
